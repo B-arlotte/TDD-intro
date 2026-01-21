@@ -2,7 +2,7 @@
  * @param {number} num1 - First number to add.
  * @param {number} num2 - Second number to add.
  * @returns {number} The sum, unless the two values are the same,
- * then returns double their sum.
+ * then returns double their sum. 
  *
  * @example
  * sumDouble(1, 2); // 3
@@ -13,7 +13,17 @@
  */
 export function sumDouble(num1, num2) {
   /* TODO */
+//  if the numbers are the same return double
+// if thre numbers are different add exact value
+const sum = num1 + num2
+if (num1 === num2){
+  return sum *2
 }
+return sum
+}
+  
+
+
 
 /**
  * @param {number} num1 - First number.
@@ -29,6 +39,19 @@ export function sumDouble(num1, num2) {
  */
 export function makes10(num1, num2) {
   /* TODO */
+  if (num1 === 10) {
+    return true
+  }
+
+  if (num2 === 10) {
+    return true
+  }
+  
+  if (num1 + num2 === 10) {
+    return true
+  }
+
+  return false
 }
 
 /**
@@ -46,7 +69,12 @@ export function makes10(num1, num2) {
  * near100(105, 10); // true
  */
 export function near100(n, distance) {
-  /* TODO */
+  const diff = Math.abs(100 - n)
+
+  if (diff > distance) {
+    return false
+  }
+  return true
 }
 
 /**
@@ -63,7 +91,8 @@ export function near100(n, distance) {
  * isMultiple35(7); // false
  */
 export function isMultiple35(n) {
-  /* TODO */
+  if (n % 3 === 0 || n % 5 === 0) return true
+  return false
 }
 
 /**
@@ -82,6 +111,16 @@ export function isMultiple35(n) {
  */
 export function shareLastDigit(num1, num2) {
   /* TODO */
+const lastDigitOne = num1 % 10
+const lastDigitTwo = num2 % 10
+if (lastDigitOne === lastDigitTwo){
+  return true 
+} 
+return false
+
+
+
+
 }
 
 /**
@@ -98,8 +137,13 @@ export function shareLastDigit(num1, num2) {
  * isColdAndHot(10, 50); // false
  */
 export function isColdAndHot(temp1, temp2) {
-  /* TODO */
+
+  const isHotAndCold1 = temp1 >100 && temp2 <0  
+  const isHotAndCold2 = temp2 >100 && temp1 <0
+  return isHotAndCold1 || isHotAndCold2 
+  
 }
+
 
 /**
  * @param {string} A - First string.
@@ -114,7 +158,8 @@ export function isColdAndHot(temp1, temp2) {
  * makeABBA("a", "b"); // "abba"
  */
 export function makeABBA(A, B) {
-  /* TODO */
+  return A+B+B+A
+ 
 }
 
 /**
@@ -135,7 +180,10 @@ export function makeABBA(A, B) {
  * makeSLS("a", "abc"); // "aabca"
  */
 export function makeSLS(str1, str2) {
-  /* TODO */
+  if (str1.length > str2.length) {
+    return str2 + str1 + str2
+  }
+  return str1 + str2 +str1
 }
 
 /**
